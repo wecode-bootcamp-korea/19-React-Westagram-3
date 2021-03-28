@@ -2,21 +2,41 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 class Login extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      idValue: "",
+      pwValue: "",
+    };
+  }
+
+  handleIdInput = (e) => {
+    this.setState({ idValue: e.target.value });
+  };
+
+  handlePwInput = (e) => {
+    this.setState({ pwValue: e.target.value });
+  };
+
   goToMain = () => {
     this.props.history.push("/maineun");
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="login">
         <section className="header">Westagram</section>
         <section className="login_area">
           <input
+            onInput={this.handleIdInput}
             type="text"
             className="login_area_id"
             placeholder="전화번호,사용자 이름 또는 이메일"
           />
           <input
+            onInput={this.handlePwInput}
             type="password"
             className="login_area_pw"
             placeholder="비밀번호"
