@@ -21,7 +21,7 @@ class Login extends Component {
   };
 
   goToMain = () => {
-    this.props.history.push("/maineun");
+    this.props.history.push("/main");
   };
 
   render() {

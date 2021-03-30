@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "./Common.css";
+import "./Main.scss";
 
 import FriendsStory from "./FriendsStory/FriendsStory";
 import Navbar from "./Navbar/Navbar";
