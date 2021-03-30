@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FeedComment from "./FeedComment/FeedComment";
-import COMMENT from "./commentData";
+//import COMMENT from "./commentData";
 import "./LeftFeed.scss";
 
 import feedImage from "../../images/feed image2.jpg";
@@ -12,10 +12,20 @@ class LeftFeed extends Component {
     commentList: [],
   };
 
-  componenetDidMount() {
-    this.setState({
-      commentList: COMMENT,
-    });
+  componentDidMount() {
+    // Misson1-1. commentData.js 파일 사용했을 때
+    // this.setState({
+    //   commentList: COMMENT,
+    // });
+
+    // Mission1-2. commentData.json 파일 사용했을 때
+    fetch("http://localhost:3001/data/sungeunpark/commentData.json", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ commentList: data });
+      });
   }
 
   // input값 저장

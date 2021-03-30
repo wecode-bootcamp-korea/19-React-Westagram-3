@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Common.css";
+//import "../Common.scss";
 import "./Main.scss";
 
 import FriendsStory from "./FriendsStory/FriendsStory";
