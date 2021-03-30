@@ -20,6 +20,10 @@ class Login extends Component {
     this.setState({ pwValue: e.target.value });
   };
 
+  goToMain = () => {
+    this.props.history.push("/maineun");
+  };
+
   render() {
     const { idValue, pwValue } = this.state;
 
@@ -45,6 +49,7 @@ class Login extends Component {
                 ? "login_area_btn pressed"
                 : "login_area_btn"
             }`}
+            onClick={this.goToMain}
           >
             로그인
           </button>

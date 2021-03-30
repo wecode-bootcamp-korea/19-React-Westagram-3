@@ -1,0 +1,19 @@
+@import "../variables.scss";
+
+.FriendsStory {
+  .main_left_slider {
+    position: relative;
+    display: flex;
+    border: 1px solid lightgray;
+    padding: 10px;
+    overflow: hidden;
+
+    img {
+      width: 70px;
+      height: 70px;
+      margin-right: 20px;
+      border-radius: 50%;
+      border: 3px solid red;
+    }
+  }
+}
