@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FeedComment from "./FeedComment/FeedComment";
+import COMMENT from "./commentData";
 import "./LeftFeed.scss";
 
 import feedImage from "../../images/feed image2.jpg";
@@ -8,21 +9,14 @@ import friendFeedProfile from "../../images/friend_profile1.jpg";
 class LeftFeed extends Component {
   state = {
     commentInput: "",
-    commentList: [
-      {
-        userId: "wecoder_Elena",
-        comment: "저도 먹고싶어요..😶❤",
-      },
-      {
-        userId: "keto_elena33",
-        comment: "키토식으로 만들어봐야겠어요!",
-      },
-      {
-        userId: "began_elena",
-        comment: "비건베이커리라니 너무 좋네요❤",
-      },
-    ],
+    commentList: [],
   };
+
+  componenetDidMount() {
+    this.setState({
+      commentList: COMMENT,
+    });
+  }
 
   // input값 저장
   handleCommentInput = (e) => {
@@ -58,6 +52,8 @@ class LeftFeed extends Component {
   };
 
   render() {
+    const { commentList } = this.state;
+
     return (
       <div className="leftFeed">
         <article className="main_left_feeds">
@@ -107,7 +103,7 @@ class LeftFeed extends Component {
               </div>
               <div className="feeds_info_description_days">1일 전</div>
               <ul className="comment_container">
-                {this.state.commentList.map((comment, idx) => {
+                {commentList.map((comment, idx) => {
                   return (
                     <FeedComment
                       key={idx}
