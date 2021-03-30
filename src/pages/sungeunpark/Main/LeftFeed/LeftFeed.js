@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import FeedComment from "./FeedComment/FeedComment";
-import "./Feed.scss";
+import "./LeftFeed.scss";
 
-class Feed extends Component {
+import feedImage from "../../images/feed image2.jpg";
+import friendFeedProfile from "../../images/friend_profile1.jpg";
+
+class LeftFeed extends Component {
   state = {
     commentInput: "",
     commentList: [
@@ -36,6 +39,7 @@ class Feed extends Component {
           comment: this.state.commentInput,
         },
       ],
+      // inputvalue비우기
       commentInput: "",
     });
   };
@@ -55,12 +59,12 @@ class Feed extends Component {
 
   render() {
     return (
-      <div className="feed">
+      <div className="leftFeed">
         <article className="main_left_feeds">
           <div className="feeds_navbar">
             <div className="feeds_navbar_left">
               <img
-                src="/images/friend_profile1.jpg"
+                src={friendFeedProfile}
                 alt="friend_profile1"
                 className="feeds_navbar_profile"
               />
@@ -68,11 +72,7 @@ class Feed extends Component {
             </div>
             <i className="fas fa-ellipsis-h"></i>
           </div>
-          <img
-            src="/images/feed image2.jpg"
-            alt="feed images"
-            className="feeds_img"
-          />
+          <img src={feedImage} alt="feed images" className="feeds_img" />
           <div className="feeds_info">
             <div className="feeds_info_icons">
               <div className="feeds_info_icons_left">
@@ -131,6 +131,7 @@ class Feed extends Component {
                   className="feed_info_comment_input"
                   placeholder="댓글 달기.."
                   onChange={this.handleCommentInput}
+                  value={this.state.commentInput}
                 />
                 <button
                   type="submit"
@@ -148,4 +149,4 @@ class Feed extends Component {
   }
 }
 
-export default Feed;
+export default LeftFeed;

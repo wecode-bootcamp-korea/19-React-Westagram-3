@@ -3,7 +3,7 @@ import "./FeedComment.scss";
 
 class FeedComment extends Component {
   render() {
-    console.log("feedcomment " + this.props);
+    console.log("feedcomment " + this.props.userId);
     return (
       <li>
         <span>{this.props.userId}</span>

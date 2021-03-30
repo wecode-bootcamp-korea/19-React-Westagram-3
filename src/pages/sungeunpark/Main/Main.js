@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import FriendsStory from "./FriendsStory/FriendsStory";
 import Navbar from "./Navbar/Navbar";
-import Feed from "./Feed/Feed";
+import LeftFeed from "./LeftFeed/LeftFeed";
 import MainRight from "./MainRight/MainRight";
 
 import "./Main.scss";
@@ -15,7 +15,7 @@ class Main extends Component {
         <main id="main_container">
           <section className="main_left">
             <FriendsStory />
-            <Feed />
+            <LeftFeed />
           </section>
           <section className="main_right_container">
             <MainRight />

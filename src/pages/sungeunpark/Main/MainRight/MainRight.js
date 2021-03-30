@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./MainRight.scss";
 
+import userProfileImg from "../../images/user profile image.jpg";
+import friendProfileImg from "../../images/friend_profile10.jpg";
+
 class MainRight extends Component {
   render() {
     return (
@@ -8,7 +11,7 @@ class MainRight extends Component {
         <div className="main_right">
           <div className="main_right_user_profile">
             <div className="profile_container">
-              <img src="/images/user profile image.jpg" alt="user profile" />
+              <img src={userProfileImg} alt="user profile" />
               <div className="profile_name">
                 <span className="id">elena_park33</span>
                 <span className="name">박성은</span>
@@ -24,10 +27,7 @@ class MainRight extends Component {
             <ul className="recommendation_list">
               <li className="recommendation_list_friend">
                 <div className="recommendation_container">
-                  <img
-                    src="/images/friend_profile10.jpg"
-                    alt="friend profile"
-                  />
+                  <img src={friendProfileImg} alt="friend profile" />
                   <div className="friend_name">
                     <span className="id">sungeunpark</span>
                     <span className="name">회원님을 위한 추천</span>
@@ -37,10 +37,7 @@ class MainRight extends Component {
               </li>
               <li className="recommendation_list_friend">
                 <div className="recommendation_container">
-                  <img
-                    src="/images/friend_profile10.jpg"
-                    alt="friend profile"
-                  />
+                  <img src={friendProfileImg} alt="friend profile" />
                   <div className="friend_name">
                     <span className="id">sungeunpark</span>
                     <span className="name">회원님을 위한 추천</span>
@@ -50,10 +47,7 @@ class MainRight extends Component {
               </li>
               <li className="recommendation_list_friend">
                 <div className="recommendation_container">
-                  <img
-                    src="/images/friend_profile10.jpg"
-                    alt="friend profile"
-                  />
+                  <img src={friendProfileImg} alt="friend profile" />
                   <div className="friend_name">
                     <span className="id">sungeunpark</span>
                     <span className="name">회원님을 위한 추천</span>

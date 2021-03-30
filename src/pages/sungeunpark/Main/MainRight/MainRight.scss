@@ -1,12 +1,11 @@
 @import "../variables.scss";
 
-// 컴포넌트를 쪼갠 뒤 position sticky가 적용되지않음
 .mainRight {
-  .main_right {
-    position: sticky;
-    top: 60px;
-    width: 100%;
+  position: sticky;
+  top: 60px;
 
+  .main_right {
+    width: 100%;
     .main_right_user_profile {
       @extend %flex-space-between;
       align-items: center;

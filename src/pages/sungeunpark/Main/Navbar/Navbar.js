@@ -1,5 +1,11 @@
 import React, { Component } from "react";
+
+import "@fortawesome/fontawesome-free/js/all.js";
 import "./Navbar.scss";
+
+import explore from "../../images/explore.png";
+import heart from "../../images/heart.png";
+import profile from "../../images/profile.png";
 
 class Navbar extends Component {
   render() {
@@ -18,13 +24,13 @@ class Navbar extends Component {
               </div>
               <div className="navbar_icons">
                 <button className="exploreBtn">
-                  <img src="/images/explore.png" alt="explore" />
+                  <img src={explore} alt="explore" />
                 </button>
                 <button className="heartBtn">
-                  <img src="/images/heart.png" alt="heart" />
+                  <img src={heart} alt="heart" />
                 </button>
                 <button className="profileBtn">
-                  <img src="/images/profile.png" alt="profile" />
+                  <img src={profile} alt="profile" />
                 </button>
               </div>
             </div>

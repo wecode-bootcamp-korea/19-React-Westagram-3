@@ -1,13 +1,12 @@
 @import "../variables.scss";
 
-// 컴포넌트로 쪼개고 난뒤 position:sticky가 적용되지않음
 .Navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
   // dropdown container
   .dropdown_container {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-
     #navbar {
       border-bottom: 1px solid lightgray;
 
