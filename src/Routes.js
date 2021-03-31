@@ -1,33 +1,34 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import LoginJun from './pages/junhyeongchae/Login/Login';
-import MainJun from './pages/junhyeongchae/Main/Main';
+import LoginJun from "./pages/junhyeongchae/Login/Login";
+import MainJun from "./pages/junhyeongchae/Main/Main";
 
-import LoginHyo from './pages/hyojinkim/Login/Login';
-import MainHyo from './pages/hyojinkim/Main/Main';
+import LoginHyo from "./pages/hyojinkim/Login/Login";
+import MainHyo from "./pages/hyojinkim/Main/Main";
 
-import Loginseok from './pages/minseokseo/Login/Login';
-import Mainseok from './pages/minseokseo/Main/Main';
+import Loginseok from "./pages/minseokseo/Login/Login";
+import Mainseok from "./pages/minseokseo/Main/Main";
+
+import LoginEun from "./pages/sungeunpark/Login/Login";
+import MainEun from "./pages/sungeunpark/Main/Main";
 
 class Routes extends React.Component {
-  render(){
-    return(
+  render() {
+    return (
       <Router>
         <Switch>
-          <Route exact path="/loginjun" component = {LoginJun} />
+          <Route exact path="/loginjun" component={LoginJun} />
           <Route exact path="/mainjun" component={MainJun} />
-          <Route exact path="/loginhyo" component = {LoginHyo} />
+          <Route exact path="/loginhyo" component={LoginHyo} />
           <Route exact path="/mainhyo" component={MainHyo} />
-          <Route exact path="/loginseok" component = {Loginseok} />
+          <Route exact path="/loginseok" component={Loginseok} />
           <Route exact path="/mainseok" component={Mainseok} />
+          <Route exact path="/logineun" component={LoginEun} />
+          <Route exact path="/maineun" component={MainEun} />
         </Switch>
       </Router>
-    )
+    );
   }
 }
 export default Routes;
