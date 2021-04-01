@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 //import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import "../pages/common.css";
+import "./Common.css";
 import "./Login.scss";
 
 // withRouterHOC
