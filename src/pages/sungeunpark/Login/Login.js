@@ -1,14 +1,9 @@
 import React, { Component } from "react";
-//import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import "../pages/common.css";
-import "./Login.scss";
-
-// withRouterHOC
 
 class Login extends Component {
   goToMain = () => {
-    this.props.history.push("/main");
+    this.props.history.push("/maineun");
   };
 
   render() {

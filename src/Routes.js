@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import Test from "./Test";
+
 import LoginJun from "./pages/junhyeongchae/Login/Login";
 import MainJun from "./pages/junhyeongchae/Main/Main";
 
@@ -18,6 +20,7 @@ class Routes extends React.Component {
     return (
       <Router>
         <Switch>
+          <Route exact path="/" component={Test} />
           <Route exact path="/loginjun" component={LoginJun} />
           <Route exact path="/mainjun" component={MainJun} />
           <Route exact path="/loginhyo" component={LoginHyo} />

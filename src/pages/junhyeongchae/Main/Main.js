@@ -1,6 +1,4 @@
 import React from 'react';
-import "./Main.scss";
-import "../../../styles/common.scss"
 
 class Main extends React.Component {
   render() {
