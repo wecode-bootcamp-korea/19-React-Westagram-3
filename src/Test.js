@@ -6,8 +6,6 @@ class Test extends React.Component{
     return(
       <>
       <h1>안녕 3팀 !! </h1>
-      <h1>안녕 3팀 !! </h1>
-      <h1>안녕 3팀 !!3번째 </h1>
       <Link to="/loginjun">준형님</Link>
       <Link to="/loginhyo">효진님</Link>
       <Link to="/loginseok">서민석</Link>
