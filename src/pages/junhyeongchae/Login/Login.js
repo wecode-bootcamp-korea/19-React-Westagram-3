@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Login.scss";
-import "../../../eCstyles/common.scss";
+import "../../../styles/common.scss";
 import { Link } from 'react-router-dom';
 
 
