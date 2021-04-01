@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "./Common.css";
-import "./Main.scss";
 
 class Main extends Component {
   render() {

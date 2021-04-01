@@ -1,0 +1,18 @@
+import React from 'react';
+import {Link} from 'react-router-dom';
+
+class Test extends React.Component{
+  render() {
+    return(
+      <>
+      <Link to="/loginjun">준형님</Link>
+      <Link to="/loginhyo">효진님</Link>
+      <Link to="/loginseok">서민석</Link>
+      <Link to="/logineun">성은님</Link>
+      </>
+    )
+  }
+}
+
+
+export default Test;
