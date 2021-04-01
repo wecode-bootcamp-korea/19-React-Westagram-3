@@ -1,4 +1,6 @@
 import React from 'react';
+import "./Login.scss";
+import "../../../eCstyles/common.scss";
 import { Link } from 'react-router-dom';
 
 
@@ -13,7 +15,7 @@ class Login extends React.Component {
               <input type="text" className="login_id" placeholder="전화번호, 사용자 이름 또는 이메일" maxlength="20" />
               <input type="password" className="login_pw" placeholder="비밀번호" maxlength="20" />
               <div className="btn">
-                <Link to="mainjun"><button type="button" className="login_form_submit">
+                <Link to="/Main"><button type="button" className="login_form_submit">
                   로그인
                 </button></Link>
               </div>

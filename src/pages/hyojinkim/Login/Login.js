@@ -1,10 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import "./Login.scss";
+
 
 class Login extends React.Component {
 
-  goToMain = (props) => {
-    this.props.history.push('mainhyo');
+  goToMain = () => {
+    this.props.history.push('./src/pages/hyojinkim/Main/Main');
   };
 
   render() {
