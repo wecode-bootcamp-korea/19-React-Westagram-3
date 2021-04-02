@@ -2,10 +2,21 @@ import React from 'react';
 import { WithRouter } from 'react-router-dom';
 
 class Login extends React.Component{
-    
+    constructor() {
+        super();
+        this.state = {
+            id: '',
+            pw: '',
+        }
+    }
     GoToMain = () =>{
         this.props.history.push('mainseok');
-        console.log(this.props.history);
+    }
+    handleIdInput = (event) => {
+        this.setState({id : event.target.value,})
+    }
+    handlePwInput = (event) =>{
+        this.setState({pw : event.target.value})
     }
     render(){
         return(
@@ -13,8 +24,8 @@ class Login extends React.Component{
             <section className="LoginDisplay">
                 <form className="LoginDisplayInput">
                     <div className="LoginDisplayWestagram">Minstagram</div>
-                    <input type="email" id="InputEmail" className="LoginDisplayEmail" placeholder="전화번호, 사용자 이름 또는 이메일" />
-                    <input type="password" id="InputPassword" className="LoginDisplayPassword" placeholder="비밀번호" />
+                    <input onChange={this.handleIdInput} type="email" id="InputEmail" className="LoginDisplayEmail" placeholder="전화번호, 사용자 이름 또는 이메일" />
+                    <input onChange={this.handlePwInput} type="password" id="InputPassword" className="LoginDisplayPassword" placeholder="비밀번호" />
                     <button onClick={this.GoToMain} id="BlueButton" onclick="EmailAt()" className="LoginDisplayButton" type="submit"><div>로그인</div></button>
                 </form>
                 <div className="LineOr">
