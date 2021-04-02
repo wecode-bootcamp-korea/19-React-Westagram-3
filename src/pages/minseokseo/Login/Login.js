@@ -9,8 +9,11 @@ class Login extends React.Component{
             pw: '',
         }
     }
-    GoToMain = () =>{
-        this.props.history.push('mainseok');
+    GoToMain = () => {
+        let idTest = /[@]/; 
+        if(idTest.test(this.state.id) && this.state.pw.length > 5){
+            this.props.history.push('/mainseok');
+        }
     }
     handleIdInput = (event) => {
         this.setState({id : event.target.value,})
