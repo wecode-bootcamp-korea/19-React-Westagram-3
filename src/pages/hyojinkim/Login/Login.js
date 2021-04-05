@@ -7,7 +7,7 @@ import "./Login.scss";
 class Login extends React.Component {
 
   goToMain = () => {
-    this.props.history.push('./src/pages/hyojinkim/Main/Main');
+    this.props.history.push('/main');
   };
 
   render() {
