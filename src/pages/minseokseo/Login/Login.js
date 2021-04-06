@@ -16,7 +16,7 @@ class Login extends React.Component{
         }
     }
     handleIdInput = (event) => {
-        this.setState({id : event.target.value,})
+        this.setState({id : event.target.value})
     }
     handlePwInput = (event) =>{
         this.setState({pw : event.target.value})
