@@ -58,19 +58,6 @@
 
 /* 로그인 버튼 form사용 */
 
-.login_form_submit {
-  width: 260px;
-  height: 30px;
-  color: white;
-  font-weight: bold;
-  border-radius: 3px;
-  border: none;
-  background-color: #0095f6;
-}
-
-.login_form_submit:disabled {
-  background-color: #b2dffc;
-}
 .btn {
   margin-top: 5px;
 }
@@ -117,4 +104,23 @@
   i:nth-child(1) {
     margin-right: 5px;
   }
+}
+
+.changeBtnColor {
+  background-color: #5ca7ee;
+  width: 260px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+}
+.normalBtnColor {
+  background-color: #b8daf9;
+  width: 260px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
 }

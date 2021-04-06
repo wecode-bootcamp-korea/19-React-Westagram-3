@@ -37,9 +37,12 @@ class Login extends Component {
               <input onChange={this.handleIdInput} type="text" className="login_id" placeholder="전화번호, 사용자 이름 또는 이메일" maxlength="20" />
               <input onChange={this.handlePwInput}type="password" className="login_pw" placeholder="비밀번호" maxlength="20" />
               <div className="btn">
-                <Link to="/mainjun"><button type="button" className="login_form_submit">
+                <Link to="/mainjun">
+                  <button type="button" className={this.state.idInputValue.includes("@") && this.state.pwInputValue.length >= 5 ? "changeBtnColor" : "normalBtnColor"}
+                  disabled={this.state.idInputValue.includes("@") && this.state.pwInputValue.length >= 5 ? false:true}>
                   로그인
-                </button></Link>
+                </button>
+                </Link>
               </div>
           </form>
           <span className="pwd_help">비밀번호를 잊으셨나요?</span>
