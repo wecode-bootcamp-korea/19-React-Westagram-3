@@ -15,18 +15,19 @@ class Login extends Component {
   handleIdInput = (event) => {
     this.setState({
       idInputValue : event.target.value
-    },
-    () => console.log(this.state.idInputValue));
-    // 비동기 처리 해결
+    });
+    console.log(this.state.idInputValue)
+    // 두개의 차이가 뭔가?
   };
   handlePwInput = (event) => {
     this.setState ({
       pwInputValue: event.target.value
     },
     () => console.log(this.state.pwInputValue));
-    console.log(this.state.pwInputValue)
+    //console.log(this.state.pwInputValue)
   };
   render() {
+    console.log(this.state.idInputValue)
     return (
       <div className='Login'>
         <main className="mainContainer">
@@ -38,7 +39,7 @@ class Login extends Component {
               <input onChange={this.handlePwInput}type="password" className="login_pw" placeholder="비밀번호" maxlength="20" />
               <div className="btn">
                 <Link to="/mainjun">
-                  <button type="button" className={this.state.idInputValue.includes("@") && this.state.pwInputValue.length >= 5 ? "changeBtnColor" : "normalBtnColor"}
+                  <button type="button" className={this.state.idInputValue.includes("@") && this.state.pwInputValue.length >= 5 ? "btnColor pressed" : "btnColor"}
                   disabled={this.state.idInputValue.includes("@") && this.state.pwInputValue.length >= 5 ? false:true}>
                   로그인
                 </button>

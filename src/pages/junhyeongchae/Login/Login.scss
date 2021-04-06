@@ -105,17 +105,7 @@
     margin-right: 5px;
   }
 }
-
-.changeBtnColor {
-  background-color: #5ca7ee;
-  width: 260px;
-  height: 30px;
-  color: white;
-  font-weight: bold;
-  border-radius: 3px;
-  border: none;
-}
-.normalBtnColor {
+.btnColor {
   background-color: #b8daf9;
   width: 260px;
   height: 30px;
@@ -123,4 +113,7 @@
   font-weight: bold;
   border-radius: 3px;
   border: none;
+}
+.btnColor.pressed {
+  background-color: #5ca7ee;
 }
