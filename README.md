@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# ✨Westagram React Team Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 💻 구현사항
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### 로그인 페이지
 
-### `yarn start`
+![Westagram loginpage](https://user-images.githubusercontent.com/60565155/113987430-5ccfdd00-9889-11eb-9685-8c1763e915a0.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 메인 페이지
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Westagram main page](https://user-images.githubusercontent.com/60565155/113988321-4fffb900-988a-11eb-90ae-596a56246980.gif)
 
-### `yarn test`
+## 🎈 주제
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `yarn build`
+### JavaScript 라이브러리인 React를 이용하여 팀 프로젝트로 Instagram 클론 진행
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 처음 팀으로 진행하는 프로젝트로서 4명의 팀원들이 함께 공통 파일 관리 및 개인 작업 진행
+- Git을 이용한 첫 번째 협업으로서 다양한 git 협업 상황 경험하며 프로젝트 진행
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ✔ 각 팀원 작업 진행 상황
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+- 공통
+- 김효진 님 :
+- 박성은 님 :
+- 서민석 님 :
+- 채준형 님 :
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🔧 사용 기술 스택
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- HTML
+- Sass
+- JavaScript (ES6 +)
+- React, JSX
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## ✏️ 진행 과정 (CRA, Git 등)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### CRA 초기 셋팅 : PM이 중심이 되어 CRA 초기 셋팅 진행
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. PM으로 선정된 팀원이 원하는 디렉토리를 설정하여 Create-react-app을 이용한 기본적인 React 틀 구현
 
-### Code Splitting
+- `npx create-react-app westagram-project`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. React Router 라이브러리 설치
+   - `npm install react-router-dom --save`
+3. Sass 라이브러리 설치
+   - `npm install node-sass@4.14.1 --save`
+4. .eslintcache 파일을 .gitignore파일에 추가하여 github에 업로드되지 않도록 처리
+5. CRA 폴더 및 파일 구성
+   - src 폴더에서 images, Pages, Components, Styles폴더 및 Routes.js 파일 관리
+   - Routes.js 및 common styling(common.scss, reset.scss) 파일을 공동으로 작업
+   - src 폴더 내 Pages 폴더에서 각자의 이름으로 된 폴더를 생성
+   - public 폴더에는 data폴더를 생성하여 추후 mock data를 이용을 위한 데이터 저장 공간 생성
+6. 초기셋팅 완료 후 `git add, git commit -m "<커밋 메세지>"`를 이용하여 버전 관리 진행
 
-### Analyzing the Bundle Size
+### Git & Github
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. CRA 초기 셋팅 후 github에 new repository를 생성, 로컬 repository와 연동
+   - `git remote add origin <원격저장소 url>`
+2. 연동된 repository의 master 브랜치에 로컬 respository에서 진행한 내역을 업로드
+   - `git push origin master`
+3. 초기셋팅 작업이 master 브랜치로 merge 되면, PM 외 팀원들은 연동된 Github의 repository를 clone하여 다운받아 작업을 진행
+   - `git clone <원격저장소 url>`
+4. 기존 CRA 초기셋팅 때 프로젝트에 필요한 라이브러리들을 담고있는 node package modules가 다운받아지는데, 팀원들의 git clone작업 시에는 해당 모듈들이 포함되어있지 않으므로 npm install로 직접 모듈을 다운로드함
+5. 이후 **master브랜치에서 작업을 하는 것이 아닌** 개인 브랜치를 생성(`git branch feature/name`)하여 해당 브랜치에서 작업 진행
+6. 각자의 브랜치에서 작업 완료 후에 바로 git add,commit,push를 하지 않고 github master브랜치가 최신으로 update되었는지 확인 먼저 진행
+7. **만약 master 브랜치가 update된 상황이라면** master 브랜치로 이동하여 `git pull origin master`명령어로 최신 버전의 master를 다운받은 후 다시 본인 브랜치로 이동하여 `git merge master`를 이용하여 master브랜치를 merge해줌 **(master브랜치가 update된 상황이 아니라면 바로 8번 작업 수행)**
+8. 이후 본인의 브랜치에서 작업한 내용을 add,commit,push 진행
+   - `git push origin feature/name`
+9. push후 github에서 PR form 작성 후 Pull Request를 보내 master브랜치로의 merge를 요청함
+10. 이후 본인 브랜치에서 새로운 작업이 진행되면 6번부터 반복 진행
 
-### Making a Progressive Web App
+## 📕 팀원별 프로젝트 후기
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 김효진 님:
+- 박성은 님: [성은님 블로그](https://velog.io/@elena_park)
+- 서민석 님:
+- 채준형 님:
