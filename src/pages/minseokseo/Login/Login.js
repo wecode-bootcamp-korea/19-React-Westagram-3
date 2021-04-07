@@ -5,22 +5,31 @@ class Login extends React.Component{
     constructor() {
         super();
         this.state = {
-            id: '',
-            pw: '',
+          id: '',
+          pw: '',
         }
-    }
-    GoToMain = () => {
+      }
+      goToMain = (event) => {
+        event.preventDefault();
         let idTest = /[@]/; 
         if(idTest.test(this.state.id) && this.state.pw.length > 5){
-            this.props.history.push('/mainseok');
+          fetch("http://localhost:3000/data/Login.json",{
+            method: "GET",
+          })
+          .then((res) => res.json())
+          .then((res) => 
+            res[0].id == this.state.id && res[0].pw == this.state.pw ? 
+            this.props.history.push('/mainseok') : alert("아이디 또는 비밀번호를 확인해"))
         }
-    }
-    handleIdInput = (event) => {
-        this.setState({id : event.target.value})
-    }
-    handlePwInput = (event) =>{
+      }
+      
+    
+      handleIdInput = (event) => {
+        this.setState({id : event.target.value,})
+      }
+      handlePwInput = (event) =>{
         this.setState({pw : event.target.value})
-    }
+      }
     render(){
         return(
         <>
@@ -29,7 +38,7 @@ class Login extends React.Component{
                     <div className="LoginDisplayWestagram">Minstagram</div>
                     <input onChange={this.handleIdInput} type="email" id="InputEmail" className="LoginDisplayEmail" placeholder="전화번호, 사용자 이름 또는 이메일" />
                     <input onChange={this.handlePwInput} type="password" id="InputPassword" className="LoginDisplayPassword" placeholder="비밀번호" />
-                    <button onClick={this.GoToMain} id="BlueButton" onclick="EmailAt()" className="LoginDisplayButton" type="submit"><div>로그인</div></button>
+                    <button onClick={this.goToMain} id="BlueButton" onclick="EmailAt()" className="LoginDisplayButton" type="submit"><div>로그인</div></button>
                 </form>
                 <div className="LineOr">
                     <div className="LineOrLine LineOrLineLeft"></div>

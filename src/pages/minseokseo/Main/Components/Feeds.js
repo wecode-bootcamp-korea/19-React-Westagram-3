@@ -1,17 +1,30 @@
 import React from "react";
 import Story from './Story';
-// import Comments from './Comments'
-let a = 0;
+
 class Feeds extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       comments : [],
-      id : '',
       value : '', 
-      like : false,
       story:[],
     }    
+  }
+  addComments = () => {
+    if(!this.state.value == ""){
+        this.setState({
+          comments : 
+          [...this.state.comments,
+          {
+            like : false,
+            comment : this.state.value,
+            id : this.state.comments.length + 1,
+            delete : false
+          }
+          ],
+          value : "",
+      } )
+    }
   }
   componentDidMount(){
     fetch('http://localhost:3000/data/Story.json', {
@@ -19,12 +32,10 @@ class Feeds extends React.Component{
     })
     .then(res => res.json())
     .then(res => {
-      console.log("asd")
       this.setState({
         story : res
       })
     })
-  
   }
   buttonHandler = () =>{
     this.addComments();
@@ -39,23 +50,29 @@ class Feeds extends React.Component{
         this.addComments();
     }
   }
-  addComments = () => {
-    if(!this.state.value == ""){
-        this.setState({
-          comments: [...this.state.comments, this.state.value],
-          value : "",
-          id : a++
-      } )
+
+  likeChangeColor = (id) => {
+    let likeId = id - 1;
+    let likeTrueFalse = [...this.state.comments]
+    if(this.state.comments[likeId].like == false){
+      likeTrueFalse[likeId] = {...likeTrueFalse[likeId], like : true}
+      this.setState({
+        comments : likeTrueFalse,
+      })
     }
-    console.log(this.state)
+    if(this.state.comments[likeId].like == true){
+      likeTrueFalse[likeId] = {...likeTrueFalse[likeId], like : false}
+      this.setState({
+        comments : likeTrueFalse,
+      })
+    }
   }
-  likeChangeColor = () => {
-    if(this.state.like == false){
-      this.setState({like : true})
-    }
-    if(this.state.like == true){
-      this.setState({like : false})
-    }
+
+  commentDelete = (id) => {
+    console.log(id)
+    this.setState(falseDelete => ({
+      comments: falseDelete.comments.filter((e) => e.id !== id)
+    }))
   }
   render(){
     return (
@@ -101,10 +118,10 @@ class Feeds extends React.Component{
               {this.state.comments.map(elements =>{
               return(
                 <div className="Comment">
-                  <li>{elements}</li>
+                  <li>{elements.comment}</li>
                   <div className="CommentOption">
-                    <div style={{color : this.state.like == true ? "red" : "black"}} onClick={this.likeChangeColor} className="CommentLike">♥️</div>
-                    <div className="CommentDelete">X</div>
+                    <div style={{color: elements.like == true ? "red" : "black"}} onClick={() =>{this.likeChangeColor(elements.id)}}className="CommentLike">♥️</div> 
+                    <div onClick={()=> {this.commentDelete(elements.id)}} value={elements.id} className="CommentDelete">X</div>
                   </div>
                 </div>
                   )
