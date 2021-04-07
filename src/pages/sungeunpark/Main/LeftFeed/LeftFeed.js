@@ -63,6 +63,8 @@ class LeftFeed extends Component {
 
   render() {
     const { commentList } = this.state;
+    const { feedItem } = this.props;
+    console.log(feedItem);
 
     return (
       <div className="leftFeed">
@@ -70,15 +72,17 @@ class LeftFeed extends Component {
           <div className="feeds_navbar">
             <div className="feeds_navbar_left">
               <img
-                src={friendFeedProfile}
+                src={feedItem.feedUploaderImg}
                 alt="friend_profile1"
                 className="feeds_navbar_profile"
               />
-              <span className="feeds_navbar_user">sujin_lee</span>
+              <span className="feeds_navbar_user">
+                {feedItem.feedUploaderName}
+              </span>
             </div>
             <i className="fas fa-ellipsis-h"></i>
           </div>
-          <img src={feedImage} alt="feed images" className="feeds_img" />
+          <img src={feedItem.feedImg} alt="feed images" className="feeds_img" />
           <div className="feeds_info">
             <div className="feeds_info_icons">
               <div className="feeds_info_icons_left">
@@ -104,14 +108,17 @@ class LeftFeed extends Component {
             </div>
             <div className="feeds_info_description">
               <div className="feeds_info_description_like">
-                elena_park33님 외 <span className="bold">여러 명</span>이
-                좋아합니다.
+                {feedItem.howManyPplLikesMyFeed}
               </div>
-              <div className="feeds_info_description_user">sujin_lee</div>
+              <div className="feeds_info_description_user">
+                {feedItem.feedUploaderName}
+              </div>
               <div className="feeds_info_description_text">
-                어제 먹은 말차파운드! 또 먹고싶다..❤
+                {feedItem.feedText}
               </div>
-              <div className="feeds_info_description_days">1일 전</div>
+              <div className="feeds_info_description_days">
+                {feedItem.howLongHasBeenSinceUpload}
+              </div>
               <ul className="comment_container">
                 {commentList.map((comment, idx) => {
                   return (

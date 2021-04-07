@@ -20,12 +20,28 @@ class Login extends Component {
     this.setState({ pwValue: e.target.value });
   };
 
+  // button을 클릭했을 때 백엔드에 통신 요청
   goToMain = () => {
-    this.props.history.push("/main");
+    //this.props.history.push("/main");
+
+    fetch("http://10.58.5.191:8000/users/signup", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.idValue,
+        password: this.state.pwValue,
+        phone_number: "01026972157",
+        name: "sungeunpark",
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("결과: ", data);
+      });
   };
 
   render() {
     const { idValue, pwValue } = this.state;
+    console.log(idValue);
 
     return (
       <div className="login">
