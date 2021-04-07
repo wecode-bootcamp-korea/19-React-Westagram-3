@@ -9,7 +9,7 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      inputId : "" ,
+      inputId : "",
       inputPw : "",
       btnActive : true,
     };

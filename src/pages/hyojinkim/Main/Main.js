@@ -1,9 +1,58 @@
 import React from 'react';
 // import "../../../styles/common.scss";
 import "./Main.scss";
+import Comment from './Comment/Comment';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      commentInput: "",
+      commentList: [], //아이디 + comment
+      // {comment: hhj}
+    }
+  }
+  
+  // input 값 저장
+  inputComment = (e) => {
+    this.setState({ commentInput : e.target.value })
+    // commentInput: 닉네임 안녕하세요.
+  }
+
+  // 댓글 생성
+  addComment = () => {
+    this.setState({
+      commentList : 
+      [...this.state.commentList, {userId: "hyojin", comment: this.state.commentInput},],
+      // comment말고 다른 값 해도 됨
+    })
+    // this.setState({
+    //   commentInput : ""
+    // })
+  }
+  // 이벤트 정의 
+
+  addCommentEnter = (e) => {
+    e.preventDefault();
+    if(e.key === "Enter") {
+      this.addComment();
+      this.deleteComment();
+    }
+  }
+  // 객체 안에 다른 값을 불러오려면 this 
+  addCommentClick = () => {
+    this.addComment();
+    this.deleteComment();
+  }
+  
+  deleteComment = () => {
+    this.setState({
+      commentInput : ""
+    })
+  }
+  
   render() {
+    const {commentList} = this.state;
       return (
         <div className="Main_page">
         <nav className="nav" id="navigation">
@@ -134,17 +183,25 @@ class Main extends React.Component {
                   <div className="comment_all">댓글 모두 보기</div>
                   <div className="comment_other">
                     <div className="comment_user">
-                      <div className="comment-add">
-
-                      </div>
+                      <ul className="comment-add">
+                        {commentList.map((item,index) => {
+                          return (
+                          <Comment key={index} commentId = {item.userId} commentItem = {item.comment} />
+                          )
+                        })}
+                      </ul>
                     </div>
                   </div>
 
                 </div>
                 <div className="make-comment">
                   <i className="far fa-smile fa-lg"></i>
-                  <input className="input_comment" type="text" placeholder="댓글 달기..." />
-                  <button className="submit_comment" type="button" disabled>게시</button>
+                  <form onSubmit={this.addCommentEnter}>
+                    <input onChange={this.inputComment} className="input_comment" type="text" placeholder="댓글 달기..." value={this.state.commentInput}/>
+                    <button onClick={this.addCommentClick} className="submit_comment" type="submit" >게시</button>
+                  </form>
+                  
+                  
                 </div>
 
               </footer>
