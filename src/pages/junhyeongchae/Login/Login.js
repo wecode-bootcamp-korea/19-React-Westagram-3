@@ -39,8 +39,7 @@ class Login extends Component {
               <input onChange={this.handlePwInput}type="password" className="login_pw" placeholder="비밀번호" maxlength="20" />
               <div className="btn">
                 <Link to="/mainjun">
-                  <button type="button" className={this.state.idInputValue.includes("@") && this.state.pwInputValue.length >= 5 ? "btnColor pressed" : "btnColor"}
-                  disabled={this.state.idInputValue.includes("@") && this.state.pwInputValue.length >= 5 ? false:true}>
+                  <button type="button" className={this.state.idInputValue.includes("@") && this.state.pwInputValue.length >= 5 ? "btnColor pressed" : "btnColor"}>
                   로그인
                 </button>
                 </Link>
