@@ -3,7 +3,6 @@ import React from 'react';
 class RightComponent extends React.Component {
   render() {
     return (
-      <>
         <div class="RightFixRecommendPerson">
             <div class="RightFixRecommendPersonProfile">
                 <div class="RightFixRecommendPersonImage"></div>
@@ -14,7 +13,6 @@ class RightComponent extends React.Component {
             </div>
             <div class="RightFixRecommendFollow">팔로우</div>
         </div>
-      </>
     )
   }
 }

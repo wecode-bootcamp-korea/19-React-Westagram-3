@@ -1,5 +1,5 @@
 import React from "react";
-import Story from './Story';
+import Story from './ChildComponents/Story';
 
 class Feeds extends React.Component{
   constructor(props){
@@ -19,7 +19,6 @@ class Feeds extends React.Component{
             like : false,
             comment : this.state.value,
             id : this.state.comments.length + 1,
-            delete : false
           }
           ],
           value : "",
@@ -28,7 +27,6 @@ class Feeds extends React.Component{
   }
   componentDidMount(){
     fetch('http://localhost:3000/data/Story.json', {
-      method: 'GET'
     })
     .then(res => res.json())
     .then(res => {
@@ -54,18 +52,10 @@ class Feeds extends React.Component{
   likeChangeColor = (id) => {
     let likeId = id - 1;
     let likeTrueFalse = [...this.state.comments]
-    if(this.state.comments[likeId].like == false){
-      likeTrueFalse[likeId] = {...likeTrueFalse[likeId], like : true}
-      this.setState({
-        comments : likeTrueFalse,
-      })
-    }
-    if(this.state.comments[likeId].like == true){
-      likeTrueFalse[likeId] = {...likeTrueFalse[likeId], like : false}
-      this.setState({
-        comments : likeTrueFalse,
-      })
-    }
+    likeTrueFalse[likeId] = {...likeTrueFalse[likeId], like : !likeTrueFalse[likeId].like}
+    this.setState({
+      comments : likeTrueFalse,
+    })
   }
 
   commentDelete = (id) => {
@@ -80,7 +70,7 @@ class Feeds extends React.Component{
           <div className="FeedStory">
           {this.state.story.map(a => {
             return(
-              <Story name={a}/>
+              <Story key={a.id} name={a}/>
             )
           })}
           </div>
@@ -118,7 +108,7 @@ class Feeds extends React.Component{
               {this.state.comments.map(elements =>{
               return(
                 <div className="Comment">
-                  <li>{elements.comment}</li>
+                  <li key={elements.id}>{elements.comment}</li>
                   <div className="CommentOption">
                     <div style={{color: elements.like == true ? "red" : "black"}} onClick={() =>{this.likeChangeColor(elements.id)}}className="CommentLike">♥️</div> 
                     <div onClick={()=> {this.commentDelete(elements.id)}} value={elements.id} className="CommentDelete">X</div>

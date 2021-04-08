@@ -1,5 +1,5 @@
 import React from 'react';
-import RightComponent from './RightMainComponent';
+import RightComponent from './ChildComponents/RightMainComponent';
 
 class Right extends React.Component{
   constructor(){
@@ -10,7 +10,6 @@ class Right extends React.Component{
   }
   componentDidMount() {
     fetch('http://localhost:3000/data/Right.json', {
-        method:'GET'
     })
     .then(res => res.json())
     .then(res => {
