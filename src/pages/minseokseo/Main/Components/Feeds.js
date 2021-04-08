@@ -59,7 +59,6 @@ class Feeds extends React.Component{
   }
 
   commentDelete = (id) => {
-    console.log(id)
     this.setState(falseDelete => ({
       comments: falseDelete.comments.filter((e) => e.id !== id)
     }))
