@@ -1,0 +1,12 @@
+.submitBtn {
+  width: 48px;
+  height: 24px;
+  border: none;
+  background-color: white;
+  color: #a3deff;
+  outline: none;
+  font-weight: bold;
+}
+.submitBtn.pressed {
+  color: #0094e6;
+}

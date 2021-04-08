@@ -38,7 +38,7 @@ class Comment extends Component {
     this.addComment();
   }
   render() {
-    const {commentList} = this.state;
+    const {commentList, commentInput} = this.state;
     return (
       <>
         <div className='comment_box'>
@@ -57,8 +57,14 @@ class Comment extends Component {
         <div className="input_box">
           <img src={smile} alt='웃음' />
           <form onSubmit={this.submitWithEnter}>
-            <input type='text' placeholder="댓글 달기..." className='plus_text' value={this.state.comment} onChange={this.handleCommentInput}/>
-            <button type='submit' className='submit_button' onClick={this.submitWithClick}>게시</button>
+            <input type='text' placeholder="댓글 달기..." className='plus_text' value={commentInput} onChange={this.handleCommentInput}/>
+            <button
+              type='submit'
+              className={commentInput.length > 0 ? "submitBtn pressed" : "submitBtn"} 
+              onClick={this.submitWithClick}
+              disabled={commentInput.length>0 ? false:true}>
+                게시
+            </button>
           </form>
         </div>
       </>
