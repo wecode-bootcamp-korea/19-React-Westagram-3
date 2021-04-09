@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Nav from './Nav/Nav';
 import Story from'./Story/Story';
 import Feed from'./Feed/Feed';
@@ -9,15 +9,35 @@ import "../../../styles/common.scss"
 
 
 
-class Main extends React.Component {
+class Main extends Component {
+  constructor(){
+    super();
+    this.state = {
+      FeedList: [],
+    }; 
+  }
+  componentDidMount(){
+    fetch('data/junhyeongchae/feedData.json')
+    .then(res => res.json())
+    .then(data => {
+      this.setState({
+        FeedList: data,
+      });
+    });
+  }
   render() {
+    const { FeedList } = this.state
     return(
     <div>
         <Nav />
         <main className='main-container'>
           <article className='article'>
             <Story />
-            <Feed />
+          <ul className='Feed_container'>
+          {FeedList.map((feedItem) => {
+                return(<Feed key={feedItem.idx} feedItem={feedItem} />);
+          })}
+          </ul>
         </article>
         <Aside />
       </main>

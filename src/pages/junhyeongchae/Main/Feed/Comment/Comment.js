@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Comment.scss'
 import Add from './Add/Add'
+//import COMMENT from'./commentData'
 
 import smile from '../../../images/smile.png'
 
@@ -9,8 +10,23 @@ class Comment extends Component {
     super();
     this.state ={
       commentInput:"",
-      commentList: [{idx:20201012, userId:"hello1358", comment:"안녕안녕"}],
+      commentList: [],
     }
+  }
+  //방법1) COMMENT.js 파일 
+  // componentDidMount(){
+  //   this.setState({
+  //     commentList: COMMENT
+  //   })
+  // }
+  componentDidMount(){
+    fetch('data/junhyeongchae/commentData.json')
+    .then(res => res.json())
+    .then(data => {
+        this.setState({
+          commentList: data,     
+        });
+      });
   }
   //Input값 저장
   handleCommentInput = (e) => {
@@ -48,9 +64,9 @@ class Comment extends Component {
           </div>
         </div>
         <ul className='thatComment'>
-          {commentList.map((item, idx) => {
+          {commentList.map((item) => {
             return(
-              <Add key = {idx} commentId= {item.userId} commentItem = {item.comment}/>
+              <Add key = {item.idx} commentId= {item.userId} commentItem = {item.comment}/>
             )
           })}
         </ul>

@@ -3,7 +3,6 @@ import './Feed.scss'
 import Comment from './Comment/Comment'
 
 import heart from '../../images/heart.png'
-import picture1 from '../../images/picture1.png'
 import speech from '../../images/speech.png'
 import airplane from '../../images/airplane.png'
 import bookmark from '../../images/bookmark.png'
@@ -12,14 +11,19 @@ import likePhoto from '../../images/likePhoto.jpeg'
 
 class Feed extends Component {
   render() {
+    const { feedItem } = this.props
+    //const { commentList } = this.state
+
     return (
       <div className='feed'>
         <div className='profile_wrap'>
-          <img src={picture1} alt='프로필' />
-            <span>dlwlrma</span>
+          <img src={feedItem.feedUploaderImg} alt='프로필' />
+          <span className="feeds_user">
+                {feedItem.feedUploaderName}
+          </span>
         </div>
         <div className='content'>
-          <img src={picture1} alt='컨텐츠' />
+          <img src={feedItem.feedImg} alt='컨텐츠' />
         </div>
         <div className='react_wrap'>
           <div className='react_wrap_left'>

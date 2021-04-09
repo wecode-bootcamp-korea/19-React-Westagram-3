@@ -113,7 +113,21 @@
   font-weight: bold;
   border-radius: 3px;
   border: none;
+  &.pressed {
+    background-color: #5ca7ee;
+  }
 }
-.btnColor.pressed {
-  background-color: #5ca7ee;
+
+.footer {
+  //width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  &.list {
+    list-style: none;
+
+    font-size: 12px;
+    margin: 100px 10px 0 0;
+  }
 }
