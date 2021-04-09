@@ -5,7 +5,6 @@ import Feed from'./Feed/Feed';
 import Aside from'./Aside/Aside';
 
 import "./Main.scss";
-import "../../../styles/common.scss"
 
 
 
