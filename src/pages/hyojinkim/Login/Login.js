@@ -18,22 +18,46 @@ class Login extends React.Component {
   handleIdInput = (e) => {
     this.setState ({
       [e.target.name] : e.target.value,
-    },() => {
-      if(this.state.inputId.includes("@") && this.state.inputPw.length >= 5){
-        this.setState({
-          btnActive: false
-        })
-      } else if (!this.state.inputId.includes("@") || this.state.inputPw.length < 5) {
-        this.setState({
-          btnActive: true
-        })
-      }
+    // },() => {
+    //   if(this.state.inputId.includes("@") && this.state.inputPw.length >= 5){
+    //     this.setState({
+    //       btnActive: false
+    //     })
+    //   } else if (!this.state.inputId.includes("@") || this.state.inputPw.length < 5) {
+    //     this.setState({
+    //       btnActive: true
+    //     })
+    //   }
     })
   };
 
   goToMain = () => {
-    this.props.history.push('/mainhyo');
+    // this.props.history.push('/mainhyo');
+    fetch("http://10.58.3.178:8000/users/login", {
+      method: 'POST',
+      body: JSON.stringify({
+        account: this.state.inputId,
+        password: this.state.inputPw,
+        // email: this.state.inputId,
+        // name: "hjkk",
+        // phone_number: "01011111110"
+      }),
+
+    })
+    .then((response) => response.json())
+    .then((result) => {
+      // console.log("result")
+      // if(result.result) {
+      //   this.props.history.push('/mainhyo');
+      // } 
+      // else if(result.message === "INVALID_USER") {
+      //   console.log(result.message);
+      // } else if(result.message === "KEY_ERROR"){
+      //   alert("id, pw를 확인해주세요.")
+      // }
+    });
   };
+
   render() {
       return (
         <div className="Login_page">
@@ -43,9 +67,10 @@ class Login extends React.Component {
           <div className="login-hyo">
             <div className="login_info">
             <input onChange={this.handleIdInput} name="inputId" className="id_pw login_id" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-              <input onChange={this.handleIdInput} name="inputPw" className="id_pw login_pw" type="password" placeholder="비밀번호"/ >
+            <input onChange={this.handleIdInput} name="inputPw" className="id_pw login_pw" type="password" placeholder="비밀번호"/ >
             </div>
-            <button disabled={this.state.btnActive} onClick={this.goToMain} type="submit" className="login_btn">로그인</button>
+            <button  onClick={this.goToMain} type="submit" className="login_btn">로그인</button> 
+            {/* disabled={this.state.btnActive} */}
           </div>
           <div className="forgotBox">
             <a href="https://www.instagram.com/accounts/password/reset/">비밀번호를 잊으셨나요?</a>

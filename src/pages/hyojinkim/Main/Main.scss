@@ -33,91 +33,7 @@
   }
   
   /* Nav-bar */
-  nav {
-    position: fixed;
-    z-index: 9;
-    top: 0;
-    width: 100vw;
-    height: 54px;
-    background-color: white;
-    border-bottom: 1px solid $bordergray-color;
-
-    .nav-box {
-      width: 840px;
-      height: 54px;
-      margin: 0px auto;
-    
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .nav_logo {
-        font-family: "Lobster", cursive;
-        font-size: 23px;
-      }
-      .nav_search {
-        position: relative;
-        width: 300px;
-        color: rgb(165, 163, 163);
-        margin-left: 150px;
-
-        .search_input {
-          width: 195px;
-          height: 26px;
-          padding: 0px 20px;
-          border-radius: 3px;
-          background-color: $lightgray-color;
-          border: 1px solid $bordergray-color;
-        }
-        .search_input:focus {
-          outline: 1px solid rgb(204, 198, 198);
-          border-radius: 3px;
-        }
-        .search_input::placeholder {
-          color: rgb(139, 139, 138);
-          font-size: 12px;
-          font-weight: 348;
-        }
-        .fa-search {
-          position: absolute;
-          left: 6px;
-          top: 8px;
-        }
-        .fa-times {
-          font-size: 12px;
-          position: absolute;
-          left: 185px;
-          top: 8px;
-        }
-        
-      }
-      .nav_menu {
-        display: flex;
-      }
-      .nav_menu i {
-        font-size: 20px;
-        margin-right: 20px;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      .nav_menu a {
-        &:visited {
-          color: inherit;
-        }
-        &:active {
-          color: $bordergray-color;
-        }
-      }
-      .nav_menu img {
-        width: 22px;
-        border-radius: 50%;
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
-  }
+  
   
   /* Main Section */
   #section {
@@ -195,6 +111,7 @@
         height: 560px;
         img {
           width: 560px;
+          height: 100%;
         }
       }
       footer {
@@ -294,4 +211,13 @@
       }
     }   
   }   
+}
+.btn {
+  color: #c0dffd;
+  &.pressed {
+    color: blueviolet;
+  }
+}
+.btn.pressed {
+  color: blueviolet;
 }

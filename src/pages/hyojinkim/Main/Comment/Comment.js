@@ -5,6 +5,10 @@ class Comment extends Component {
   render() {
     return (
       <li className="Comments">
+        {/* ⭐️ 이건 왜 안나옴.?
+         <span>ㄴ
+          {this.props.idx}
+        </span>  */}
         <span className="Comment_id">
           {this.props.commentId}
         </span>
