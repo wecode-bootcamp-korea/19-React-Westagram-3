@@ -13,11 +13,14 @@ import Mainseok from "./pages/minseokseo/Main/Main";
 import LoginEun from "./pages/sungeunpark/Login/Login";
 import MainEun from "./pages/sungeunpark/Main/Main";
 
+import Start from"./pages/start/Start"
+
 class Routes extends React.Component {
   render() {
     return (
       <Router>
         <Switch>
+          <Route exact path="/" component={Start} />
           <Route exact path="/loginjun" component={LoginJun} />
           <Route exact path="/mainjun" component={MainJun} />
           <Route exact path="/loginhyo" component={LoginHyo} />
