@@ -1,9 +1,5 @@
 @import "../Common.scss";
-
-:root {
-  --my-border-radius: 6px;
-  --my-font-weight: bold;
-}
+@import "../variables.scss";
 
 html {
   height: 100%;
@@ -35,9 +31,9 @@ html {
     .login_area_pw {
       margin: 3px 0;
       padding: 15px;
-      font-weight: var(--my-font-weight);
+      font-weight: $font-weight-bold;
       border: 1px solid lightgray;
-      border-radius: var(--my-border-radius);
+      border-radius: $basic-border-radius;
       color: black;
       background-color: #fafafa;
     }
@@ -46,14 +42,14 @@ html {
       margin: 20px 0;
       padding: 5px 10px;
       font-size: 20px;
-      font-weight: var(--my-font-weightt);
-      border-radius: var(--my-border-radius);
+      font-weight: $font-weight-bold;
+      border-radius: $basic-border-radius;
       color: white;
       background-color: #c4e1fb;
-    }
 
-    .login_area_btn.pressed {
-      background-color: #0095f6;
+      &.pressed {
+        background-color: $main_right_active_button;
+      }
     }
   }
 
@@ -61,7 +57,7 @@ html {
     padding-top: 15px;
     .find_pw a {
       color: #2a5682;
-      font-weight: var(--my-font-weight);
+      font-weight: $font-weight-bold;
     }
   }
 }

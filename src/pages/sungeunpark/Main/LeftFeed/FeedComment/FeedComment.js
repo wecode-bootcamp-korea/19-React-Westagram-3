@@ -4,8 +4,8 @@ import "./FeedComment.scss";
 class FeedComment extends Component {
   render() {
     return (
-      <li>
-        <span>{this.props.userId}</span>
+      <li className="feed_comment">
+        <span className="user_id">{this.props.userId}</span>
         <span>{this.props.comment}</span>
       </li>
     );

@@ -1,4 +1,7 @@
-// .FeedComment {
-//     style="position: absolute; right: 0px; top: 3px;"
-//     style="position: relative;"
-// }
+.feed_comment {
+  padding: 5px 0;
+
+  .user_id {
+    margin-right: 5px;
+  }
+}

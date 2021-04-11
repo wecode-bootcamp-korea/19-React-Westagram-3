@@ -1,14 +1,12 @@
-@import "./variables.scss";
+@import "../variables.scss";
 @import "../Common.scss";
 
 .main {
-  // main
   #main_container {
     display: flex;
     max-width: 1100px;
     margin: 0 auto;
     padding-top: 40px;
-    // margin-top: 30px;
     @media screen and (max-width: 768px) {
       justify-content: center;
     }

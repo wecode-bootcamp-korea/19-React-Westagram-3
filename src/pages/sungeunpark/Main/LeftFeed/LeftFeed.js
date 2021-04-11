@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import FeedComment from "./FeedComment/FeedComment";
-//import COMMENT from "./commentData";
 import "./LeftFeed.scss";
-
-import feedImage from "../../images/feed image2.jpg";
-import friendFeedProfile from "../../images/friend_profile1.jpg";
 
 class LeftFeed extends Component {
   state = {
@@ -13,13 +9,7 @@ class LeftFeed extends Component {
   };
 
   componentDidMount() {
-    // Misson1-1. commentData.js 파일 사용했을 때
-    // this.setState({
-    //   commentList: COMMENT,
-    // });
-
-    // Mission1-2. commentData.json 파일 사용했을 때
-    fetch("http://localhost:3001/data/sungeunpark/commentData.json", {
+    fetch("/data/sungeunpark/commentData.json", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -28,27 +18,24 @@ class LeftFeed extends Component {
       });
   }
 
-  // input값 저장
   handleCommentInput = (e) => {
     this.setState({ commentInput: e.target.value });
   };
 
-  // 댓글 생성
   addComment = () => {
+    const { commentList, commentInput } = this.state;
     this.setState({
       commentList: [
-        ...this.state.commentList,
+        ...commentList,
         {
           userId: "elenapark33",
-          comment: this.state.commentInput,
+          comment: commentInput,
         },
       ],
-      // inputvalue비우기
       commentInput: "",
     });
   };
 
-  // enter
   submitWithEnter = (e) => {
     e.preventDefault();
     if (e.keyCode === 13) {
@@ -56,15 +43,13 @@ class LeftFeed extends Component {
     }
   };
 
-  // 게시버튼 클릭
   submitWithClick = () => {
     this.addComment();
   };
 
   render() {
-    const { commentList } = this.state;
+    const { commentList, commentInput } = this.state;
     const { feedItem } = this.props;
-    console.log(feedItem);
 
     return (
       <div className="leftFeed">
@@ -144,7 +129,7 @@ class LeftFeed extends Component {
                   className="feed_info_comment_input"
                   placeholder="댓글 달기.."
                   onChange={this.handleCommentInput}
-                  value={this.state.commentInput}
+                  value={commentInput}
                 />
                 <button
                   type="submit"

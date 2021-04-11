@@ -12,49 +12,32 @@ class Login extends Component {
     };
   }
 
-  handleIdInput = (e) => {
-    this.setState({ idValue: e.target.value });
+  handleInput = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
-  handlePwInput = (e) => {
-    this.setState({ pwValue: e.target.value });
-  };
-
-  // button을 클릭했을 때 백엔드에 통신 요청
   goToMain = () => {
-    //this.props.history.push("/main");
-
-    fetch("http://10.58.5.191:8000/users/signup", {
-      method: "POST",
-      body: JSON.stringify({
-        email: this.state.idValue,
-        password: this.state.pwValue,
-        phone_number: "01026972157",
-        name: "sungeunpark",
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("결과: ", data);
-      });
+    this.props.history.push("/maineun");
   };
 
   render() {
     const { idValue, pwValue } = this.state;
-    console.log(idValue);
 
     return (
       <div className="login">
         <section className="header">Westagram</section>
         <section className="login_area">
           <input
-            onChange={this.handleIdInput}
+            onChange={this.handleInput}
+            name="idValue"
             type="text"
             className="login_area_id"
             placeholder="전화번호,사용자 이름 또는 이메일"
           />
           <input
-            onChange={this.handlePwInput}
+            onChange={this.handleInput}
+            name="pwValue"
             type="password"
             className="login_area_pw"
             placeholder="비밀번호"

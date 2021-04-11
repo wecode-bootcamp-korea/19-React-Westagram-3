@@ -3,10 +3,6 @@ import React, { Component } from "react";
 import "@fortawesome/fontawesome-free/js/all.js";
 import "./Navbar.scss";
 
-import explore from "../../images/explore.png";
-import heart from "../../images/heart.png";
-import profile from "../../images/profile.png";
-
 class Navbar extends Component {
   render() {
     return (
@@ -23,14 +19,20 @@ class Navbar extends Component {
                 <input type="text" placeholder="검색" />
               </div>
               <div className="navbar_icons">
-                <button className="exploreBtn">
-                  <img src={explore} alt="explore" />
+                <button>
+                  <img
+                    src="/data/sungeunpark/images/explore.png"
+                    alt="explore"
+                  />
                 </button>
-                <button className="heartBtn">
-                  <img src={heart} alt="heart" />
+                <button>
+                  <img src="/data/sungeunpark/images/heart.png" alt="heart" />
                 </button>
-                <button className="profileBtn">
-                  <img src={profile} alt="profile" />
+                <button>
+                  <img
+                    src="/data/sungeunpark/images/profile.png"
+                    alt="profile"
+                  />
                 </button>
               </div>
             </div>
