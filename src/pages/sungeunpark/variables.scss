@@ -1,0 +1,21 @@
+$dropdown_background-color: #f1f1f1;
+$feeds-comment-before: #b3dffc;
+$feeds-comment-after: #3baef8;
+$main_right_active_button: #0095f6;
+$basic-border-radius: 6px;
+$font-weight-bold: bold;
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+%flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  text-align: center;
+  margin: 0 auto;
+}

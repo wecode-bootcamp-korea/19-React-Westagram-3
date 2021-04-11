@@ -1,0 +1,108 @@
+@import "../../variables.scss";
+
+.leftFeed {
+  border: 1px solid lightgray;
+  margin-top: 30px;
+  overflow: hidden;
+  .main_left_feeds {
+    padding-top: 0;
+    .feeds_navbar {
+      padding: 10px;
+      @extend %flex-space-between;
+      align-items: center;
+      border-bottom: 1px solid lightgray;
+
+      .feeds_navbar_left {
+        display: flex;
+        align-items: center;
+
+        .feeds_navbar_profile {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 15px;
+          border: 3px solid red;
+        }
+      }
+    }
+
+    .feeds_img {
+      width: 100%;
+    }
+
+    .feeds_info {
+      .feeds_info_icons {
+        @extend %flex-space-between;
+        padding: 5px 10px;
+
+        .feeds_info_icons_left {
+          svg {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .feeds_info_description {
+        text-align: left;
+        padding: 10px;
+
+        .feeds_info_description_like {
+          margin-bottom: 5px;
+          padding: 5px 0;
+
+          .bold {
+            font-weight: $font-weight-bold;
+          }
+        }
+
+        .feeds_info_description_user {
+          font-weight: $font-weight-bold;
+          padding: 5px 0;
+        }
+
+        .feeds_info_description_days {
+          font-size: 12px;
+          color: gray;
+          padding: 5px 0;
+        }
+      }
+
+      .feeds_info_comment {
+        border-top: 1px solid lightgray;
+        padding: 10px 5px;
+        @extend %flex-space-between;
+
+        .feed_info_comment_emoji {
+          flex-basis: 5%;
+        }
+
+        form {
+          flex-basis: 95%;
+          position: relative;
+
+          .feed_info_comment_input {
+            width: 100%;
+            padding: 5px;
+            font-size: 15px;
+            border: none;
+            outline: none;
+          }
+
+          .feed_info_comment_submit {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            color: $feeds-comment-before;
+            font-size: 15px;
+            padding: 0 5px;
+          }
+
+          .feed_info_comment_submit.pressed {
+            color: $feeds-comment-after;
+            font-weight: $font-weight-bold;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@import "../../variables.scss";
+
+.mainRight {
+  position: sticky;
+  top: 60px;
+
+  .main_right {
+    width: 100%;
+    .main_right_user_profile {
+      @extend %flex-space-between;
+      align-items: center;
+      padding-top: 10px;
+
+      button {
+        color: $main_right_active_button;
+        font-weight: bold;
+      }
+
+      .profile_container {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+        }
+
+        .profile_name {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          margin-left: 5px;
+
+          span {
+            margin: 4px 0;
+          }
+        }
+      }
+    }
+
+    .main_right_recommendation {
+      .title_container {
+        @extend %flex-space-between;
+        margin: 20px 0;
+
+        div {
+          font-weight: bold;
+          color: darkgray;
+        }
+      }
+      .recommendation_list {
+        .recommendation_list_friend {
+          @extend %flex-space-between;
+          align-items: center;
+          margin-bottom: 10px;
+
+          .recommendation_container {
+            display: flex;
+
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              margin-right: 5px;
+            }
+
+            .friend_name {
+              @extend %flex-center;
+              flex-direction: column;
+              align-items: flex-start;
+
+              span {
+                margin: 4px 0;
+              }
+            }
+          }
+          button {
+            color: $main_right_active_button;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .main_right_footer {
+      margin-top: 20px;
+      text-align: left;
+
+      li {
+        display: inline-block;
+        a {
+          color: lightgray;
+        }
+      }
+      div {
+        color: lightgray;
+        margin-top: 15px;
+      }
+    }
+  }
+}

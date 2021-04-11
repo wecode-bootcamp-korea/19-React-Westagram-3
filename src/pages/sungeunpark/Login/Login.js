@@ -1,32 +1,55 @@
 import React, { Component } from "react";
-//import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import "./Common.css";
 import "./Login.scss";
 
-// withRouterHOC
-
 class Login extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      idValue: "",
+      pwValue: "",
+    };
+  }
+
+  handleInput = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
   goToMain = () => {
-    this.props.history.push("/main");
+    this.props.history.push("/maineun");
   };
 
   render() {
+    const { idValue, pwValue } = this.state;
+
     return (
       <div className="login">
         <section className="header">Westagram</section>
         <section className="login_area">
           <input
+            onChange={this.handleInput}
+            name="idValue"
             type="text"
             className="login_area_id"
             placeholder="전화번호,사용자 이름 또는 이메일"
           />
           <input
+            onChange={this.handleInput}
+            name="pwValue"
             type="password"
             className="login_area_pw"
             placeholder="비밀번호"
           />
-          <button className="login_area_btn" onClick={this.goToMain}>
+          <button
+            className={`${
+              idValue.includes("@") && pwValue.length >= 5
+                ? "login_area_btn pressed"
+                : "login_area_btn"
+            }`}
+            onClick={this.goToMain}
+          >
             로그인
           </button>
         </section>
